@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keyboard demo | Charming Desk</title>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="icon" href="uploads/Untitled design.gif" alt="site logo" id="sitelogo">
+    <meta property="og:image" content="https://demo.charmingdesk.com.ng/keiths-piano/uploads/Untitled design.gif">
+    <meta name="description" content="Practice Javascript with Charming Desk's demo piano. All source code with their explanations available at our blog">
+</head>
+<body>
+    <section class="container">
+     
+    <header>
+       <center><img src="uploads/Untitled design.gif" alt="charming desk logo" width="90px" height="90px"></center>
+        <h1>Keyboard demo  </h1><em>by <a href="https://www.charmingdesk.com.ng">Charming Desk</a></em><hr>
+    </header><br>
+    <section class="container-fluid">
+	<form>
+	<div class="form-group">
+	<label for="instrument">Select instrument: </label>
+		<select id="instrument" class="form-control">
+			<option value="0">Piano</option>
+			<option value="1">Organ</option>
+			<option value="2">Acoustic</option>
+			<option value="3">Edm</option>
+		
+		
+		
+		</select>
+	</div>
+	
+	</form>
+    <section class="row piano-container">
+        <section class="col col-1">
+            <button class="btn bg-white border border-dark" value="C" onclick="playnote(this.value)"><em>C</em></button>
+        <button class="btn bg-dark border border-dark" value="C#" onclick="playnote(this.value)"><em></em></button>
+    </section>
+        <section class="col col-1">
+            <button class="btn bg-white border border-dark" value="D" onclick="playnote(this.value)"><em>D</em></button>
+        <button class="btn bg-dark border border-dark" value="D#" onclick="playnote(this.value)"><em></em></button>
+    </section>
+        <section class="col col-1">
+            <button class="btn bg-white border border-dark" value="E" onclick="playnote(this.value)"><em>E</em></button>
+        </section>
+        <section class="col col-1">
+            <button class="btn bg-white border border-dark" value="F" onclick="playnote(this.value)"><em>F</em></button>
+        <button class="btn bg-dark border border-dark" value="F#" onclick="playnote(this.value)"><em></em></button>
+        </section>
+        <section class="col col-1">
+            <button class="btn bg-white border border-dark" value="G" onclick="playnote(this.value)"><em>G</em></button>
+        <button class="btn bg-dark border border-dark" value="G#" onclick="playnote(this.value)"><em></em></button>
+    </section>
+        <section class="col col-1">
+            <button class="btn bg-white border border-dark" value="A" onclick="playnote(this.value)"><em>A</em></button>
+        <button class="btn bg-dark border border-dark" value="A#" onclick="playnote(this.value)"><em></em></button>
+    </section>
+        <section class="col col-1"><button class="btn bg-white border border-dark" value="B" onclick="playnote(this.value)"><em>B</em></button></section>
+        <section class="col col-1"><button class="btn bg-white border border-dark" value="C" onclick="playnote(this.value)"><em><b>C</b></em></button></section>
+    
+    </section>
+</section>
+<footer>
+   <blockquote class="badge badge-light">based on the Audio Synthesis script by <a href="https://keithwhor.github.io" rel="nofollow">Keith Williams</a></blockquote> 
+</footer>
+</section>
+<footer class="bg-dark">
+    <p align="center">
+    <i class="fas fa-copyright"></i><i> Charming Desk </i><br><br>
+    <i>DESIGNED BY<br> <a href="https://www.instagram.com/kid__charming" rel="nofollow">Kid charming</a></i><br><br>
+    
+    <a href="https://www.charmingdesk.com.ng/privacy-polocy/">Privacy policy</a><br>
+    <a href="https://www.charmingdesk.com.ng/terms-and-conditions/">Terms and conditions</a><br>
+    <a href="https://www.charmingdesk.com.ng/disclaimer/">Disclaimer</a><br>
+    <h5><center>Charming Desk, your favorite web developers!</center></h5>
+    <br><br><br>
+    </p>
+    </footer>
+<style>
+    body{
+        background: ghostwhite;
+        }
+    .btn{
+        height:90%;
+		position:relative;
+		left:-20px;
+		z-index:5;
+    }
+    .piano-container{
+        height:20vh;
+        width:420px;
+		box-sizing:border-box;
+    }
+    footer{
+	
+	padding:10px;
+	padding:10px;
+	color:white;
+}
+.container-fluid{
+    height:60vh;
+}
+.bg-dark{
+    height:45%;
+    position: relative;
+    top:-90%;
+    left:0px;
+    z-index:10;
+}
+</style>
+<script src="jquery.js"></script>
+<script src="uploads/icons/fontawesome-free-5.15.1-web/js/all.js"></script>
+<script src="audiosynth/audiosynth.js"></script>
+
+<script>
+    function playnote(key){
+	
+	var instrument= document.querySelector("#instrument");
+	var instrumentval= instrument.value;
+        var note= new AudioSynth();
+        //note.pause();
+        
+        note.play(instrumentval,key,4,2);
+        
+
+    }
+</script>
+</body>
+
+
+</html>
